@@ -1,0 +1,13 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Results page</h1>
+  You entered the following information:<br/>
+  Years of Education: {{educ}}<br/>
+    County's unemployment rate: {{unemployment}}<br/>
+    Distance from Campus: {{dist}}<br/>
+    Tuition cost: {{tuition}}<br/>
+
+    <h4>Prediction: {{prediction}}</h4>
+{% endblock content %}

@@ -1,0 +1,109 @@
+<!-- templates/home.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Header -->
+<h1 class="text-center my-5">Test Scores Prediction</h1>
+
+<!-- Form -->
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8">
+<form action="{% url 'homePost' %}" method="post">
+{% csrf_token %}
+
+{#<h3>Years Work Experience</h3>#}
+{##}
+{#<!-- Show radio button list named 'choice' -->#}
+{#{% for choice in mynumbers %}#}
+{#    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice }}">#}
+{#    <label for="choice{{ forloop.counter }}">{{ choice }}</label><br>#}
+{#{% endfor %}#}
+{#<div class="input-group mb-3">#}
+{#  <div class="input-group-prepend">#}
+{#  <span class="input-group-text" id="inputGroup-sizing-default">GMAT Score</span>#}
+{#  </div>#}
+{#  <input type="text" name="gmat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">#}
+{#  </div>#}
+
+<h3>How many years of education do you have?</h3>
+
+<!-- Show radio button list named 'choice' -->
+{#{% for choice in yearsEducationOption %}#}
+{#    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice }}">#}
+{#    <label for="choice{{ forloop.counter }}">{{ choice }}</label><br>#}
+{#{% endfor %}#}
+<div class="input-group mb-3">
+  <div class="input-group-prepend" style="width:35%">
+  <span class="input-group-text" id="inputGroup-sizing-default">Years of Education</span>
+  </div>
+  <input type="text" name="education" class="form-control" aria-label="Sizing example input"
+         aria-describedby="inputGroup-sizing-default">
+  </div>
+
+<h3>What is the unemployment rate in your county?</h3>
+
+<!-- Show radio button list named 'choice' -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend" style="width:35%">
+  <span class="input-group-text" id="inputGroup-sizing-default">Unemployment Rate</span>
+  </div>
+  <input type="text" name="unemployment" class="form-control" aria-label="Sizing example input"
+         aria-describedby="inputGroup-sizing-default">
+  </div>
+
+<h3>How far do you live from campus?</h3>
+
+<!-- Show radio button list named 'choice' -->
+{#{% for choice in mynumbers %}#}
+{#    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice }}">#}
+{#    <label for="choice{{ forloop.counter }}">{{ choice }}</label><br>#}
+{#{% endfor %}#}
+<div class="input-group mb-3">
+  <div class="input-group-prepend" style="width:35%">
+  <span class="input-group-text" id="inputGroup-sizing-default">Distance (miles)</span>
+  </div>
+  <input type="text" name="distance" class="form-control" aria-label="Sizing example input"
+         aria-describedby="inputGroup-sizing-default">
+  </div>
+
+<h3>How much do you pay for tuition?</h3>
+
+<!-- Show radio button list named 'choice' -->
+{#{% for choice in mynumbers %}#}
+{#    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice }}">#}
+{#    <label for="choice{{ forloop.counter }}">{{ choice }}</label><br>#}
+{#{% endfor %}#}
+<div class="input-group mb-3">
+  <div class="input-group-prepend" style="width:35%">
+  <span class="input-group-text" id="inputGroup-sizing-default">Tuition (USD)</span>
+  </div>
+  <input type="text" name="tuition" class="form-control" aria-label="Sizing example input"
+         aria-describedby="inputGroup-sizing-default">
+  </div>
+
+
+
+<!—Submit button is also contained in the form -->
+<div class="input-group mb-3">
+  <button type="submit" class="btn btn-dark form-control">POST YOUR CHOICE</button>
+  </div>
+
+</form>
+  </div>
+</div>
+
+
+    <style>
+  .input-group-text {
+    width: 95%;
+  }
+
+    .input-group-prepend {
+      text-align: center;
+  }
+
+</style>
+
+{% endblock content %}
